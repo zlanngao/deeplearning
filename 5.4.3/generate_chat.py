@@ -134,7 +134,12 @@ def gen_chatbot_vectors(input_file,vocab_file,output_file):
         vec = map(to_id,line)
         output_f.write(' '.join([str(n) for n in vec]) + "\n")
 
-def get_vectors():    gen_chatbot_vectors(train_encode_file,vocab_encode_file,train_encode_vec_file)    gen_chatbot_vectors(train_decode_file,vocab_decode_file,train_decode_vec_file)    gen_chatbot_vectors(test_encode_file,vocab_encode_file,test_encode_vec_file)    gen_chatbot_vectors(test_decode_file,vocab_decode_file,test_decode_vec_file)
+def get_vectors():
+    gen_chatbot_vectors(train_encode_file,vocab_encode_file,train_encode_vec_file)
+    gen_chatbot_vectors(train_decode_file,vocab_decode_file,train_decode_vec_file)
+    gen_chatbot_vectors(test_encode_file,vocab_encode_file,test_encode_vec_file)
+    gen_chatbot_vectors(test_decode_file,vocab_decode_file,test_decode_vec_file)
+
 def get_vocabs(vocab_file):
     words = list()
     with open(vocab_file,"r", encoding="utf-8") as vocab_f:
